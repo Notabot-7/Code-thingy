@@ -14,6 +14,7 @@ class ImageViewer:
             r'assets\Images\Hall 1 right.png', #Right
             r'assets\Images\Hall 2 left.png', #Left
         ]
+        hi = 1
         self.index = 0
         self.trigger_index = 2  # The index at which the button appears
 
