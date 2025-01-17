@@ -52,6 +52,7 @@ class ImageViewer:
         Button(self.root, image=self.left_image, command=self.previous_image, bd=0).grid(column=0, row=2, sticky="nsew")
         Button(self.root, image=self.right_image, command=self.next_image, bd=0).grid(column=2, row=2, sticky="nsew")
         Button(self.root, image=self.up_image, command=self.forward_image, bd=0).grid(column=1, row=2, sticky="nsew")
+        Button(self.root, text="back", command=self.back_image, bd=0).grid(column=1, row=3, sticky="nsew")
 
     def display_image(self):
         """Displays the current image based on the index."""
@@ -92,6 +93,11 @@ class ImageViewer:
             self.pop_up()
         print(self.index)
         self.display_image()
+
+    def back_image(self):
+        """Moves back one image."""
+        self.index = (self.index - 3) % len(self.images)
+        
 
     def pop_up(self):
         if self.index == 4:
